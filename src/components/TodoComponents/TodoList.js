@@ -3,10 +3,12 @@ import Todo from './Todo';
 
 class TodoList extends React.Component {
 
-  render() {
+  render(props) {
     return (
       <div className="todo-list">
-        <Todo />
+        {this.props.todoList.map(item => (
+          <Todo item={item} key={item.id}/>
+          ))}
       </div>
     )
   }

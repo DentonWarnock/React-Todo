@@ -9,10 +9,23 @@ class App extends React.Component {
   constructor() {
     super() 
       this.state = {
-        task: "some task",
-        id: 1,
-        completed: false      
-    }
+        todos: []      
+      }
+  }
+
+  addTodo = taskName => {
+    console.log("add task: ", taskName);
+
+    this.setState({
+      todos: [
+        ...this.state.todos,
+        {
+          task: taskName,
+          id: Date.now(),
+          purchased: false
+        }
+      ]
+    })
   }
 
 
@@ -21,10 +34,14 @@ class App extends React.Component {
       <div className="App">
         <div className="header">
           <h2>TODO LIST</h2>
-          <TodoForm />
+          <TodoForm 
+            addTodo={this.addTodo}
+          />
         </div>
         <div className="list">
-          <TodoList />
+          <TodoList
+            todoList={this.state.todos}
+           />
         </div>
         
       </div>
