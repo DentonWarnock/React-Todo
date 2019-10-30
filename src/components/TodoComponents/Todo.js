@@ -1,10 +1,18 @@
 import React from 'react';
 
 const Todo = props => {
+  let verboseClassName = "item";
+  if (props.item.completed) {
+    verboseClassName = verboseClassName + " completed";
+  }
+
+  const handleClick = () => {
+    props.markComplete(props.item.id)
+  }
 
   console.log(props)
   return (
-    <div className="Todo" key={Date.now()}>
+    <div  className={verboseClassName} onClick={handleClick} key={Date.now()}>
       <div>{props.item.task}</div>
     </div>
   )

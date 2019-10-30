@@ -7,8 +7,15 @@ class TodoList extends React.Component {
     return (
       <div className="todo-list">
         {this.props.todoList.map(item => (
-          <Todo item={item} key={item.id}/>
+          <Todo 
+            item={item} 
+            key={item.id}
+            markComplete={this.props.markComplete}
+            />
           ))}
+        <button className="clear-btn" onClick={this.props.clearComplete}>
+          Clear Completed
+        </button>
       </div>
     )
   }

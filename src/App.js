@@ -1,6 +1,7 @@
 import React from 'react';
 import TodoForm from './components/TodoComponents/TodoForm.js';
 import TodoList from './components/TodoComponents/TodoList.js';
+import "./Styles.css";
 
 class App extends React.Component {
   // you will need a place to store your state in this component.
@@ -28,6 +29,30 @@ class App extends React.Component {
     })
   }
 
+  markComplete = todoID => {
+    console.log("markComplete: ", todoID)
+
+    this.setState({
+      todos: this.state.todos.map(item => {
+        if (item.id === todoID) {
+          return {
+            ...item,
+            completed: !item.completed
+          }
+        }
+        return item;
+      })
+    })
+  }
+
+  clearComplete = () => {
+    console.log("clear complete");
+
+    this.setState({
+      todos: this.state.todos.filter(item => !item.completed)
+    })
+  }
+
 
   render() {
     return (
@@ -41,6 +66,8 @@ class App extends React.Component {
         <div className="list">
           <TodoList
             todoList={this.state.todos}
+            markComplete={this.markComplete}
+            clearComplete={this.clearComplete}
            />
         </div>
         
