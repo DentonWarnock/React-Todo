@@ -1,4 +1,5 @@
 import React from 'react';
+import { StyledForm, StyledButton } from "../../Styles.js";
 
 class TodoForm extends React.Component {
   constructor() {
@@ -26,7 +27,7 @@ class TodoForm extends React.Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
+      <StyledForm onSubmit={this.handleSubmit}>
         <input 
           onChange={this.handleChange} 
           type="text" 
@@ -34,8 +35,8 @@ class TodoForm extends React.Component {
           placeholder="...todo"
           value={this.state.inputValue} 
         />
-        <button>Add Todo</button>
-      </form>
+        <StyledButton>Add Todo</StyledButton>
+      </StyledForm>
     )
   }
 }

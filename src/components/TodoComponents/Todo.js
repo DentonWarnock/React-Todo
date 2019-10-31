@@ -1,4 +1,5 @@
 import React from 'react';
+import { TodoCard } from "../../Styles.js";
 
 const Todo = props => {
   let verboseClassName = "item";
@@ -12,9 +13,9 @@ const Todo = props => {
 
   console.log(props)
   return (
-    <div  className={verboseClassName} onClick={handleClick} key={props.item.id}>
+    <TodoCard  className={verboseClassName} onClick={handleClick} key={props.item.id}>
       <div>{props.item.task}</div>
-    </div>
+    </TodoCard>
   )
 }
 

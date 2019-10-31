@@ -1,15 +1,16 @@
 import React from 'react';
 import Todo from './Todo';
+import { StyledButton } from "../../Styles.js";
 
 class TodoList extends React.Component {
 
   showButton = () => {
     return this.props.todoList.length > 0 ? 
     <div className="clear">
-    <div>(click items to mark as completed)</div>
-     <button className="clear-btn" onClick={this.props.clearComplete}>
+    <div className="instructions">(click items to mark completed)</div>
+     <StyledButton className="clear-btn" onClick={this.props.clearComplete}>
        Clear Completed
-    </button></div> : null
+    </StyledButton></div> : null
   }
 
   render(props) {

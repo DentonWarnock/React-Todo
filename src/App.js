@@ -2,6 +2,7 @@ import React from 'react';
 import TodoForm from './components/TodoComponents/TodoForm.js';
 import TodoList from './components/TodoComponents/TodoList.js';
 import "./Styles.css";
+import { AppContainer } from "./Styles.js";
 
 class App extends React.Component {
   // you will need a place to store your state in this component.
@@ -56,7 +57,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="App">
+      <AppContainer>
         <div className="header">
           <h2>TODO LIST</h2>
           <TodoForm 
@@ -71,7 +72,7 @@ class App extends React.Component {
            />
         </div>
         
-      </div>
+      </AppContainer>
     );
   }
 }
