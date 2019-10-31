@@ -5,9 +5,11 @@ class TodoList extends React.Component {
 
   showButton = () => {
     return this.props.todoList.length > 0 ? 
+    <div className="clear">
+    <div>(click items to mark as completed)</div>
      <button className="clear-btn" onClick={this.props.clearComplete}>
        Clear Completed
-    </button> : null
+    </button></div> : null
   }
 
   render(props) {
