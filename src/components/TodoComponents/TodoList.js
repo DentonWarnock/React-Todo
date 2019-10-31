@@ -3,6 +3,13 @@ import Todo from './Todo';
 
 class TodoList extends React.Component {
 
+  showButton = () => {
+    return this.props.todoList.length > 0 ? 
+     <button className="clear-btn" onClick={this.props.clearComplete}>
+       Clear Completed
+    </button> : null
+  }
+
   render(props) {
     return (
       <div className="todo-list">
@@ -13,9 +20,7 @@ class TodoList extends React.Component {
             markComplete={this.props.markComplete}
             />
           ))}
-        <button className="clear-btn" onClick={this.props.clearComplete}>
-          Clear Completed
-        </button>
+        {this.showButton()}
       </div>
     )
   }

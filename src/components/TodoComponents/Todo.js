@@ -12,7 +12,7 @@ const Todo = props => {
 
   console.log(props)
   return (
-    <div  className={verboseClassName} onClick={handleClick} key={Date.now()}>
+    <div  className={verboseClassName} onClick={handleClick} key={props.item.id}>
       <div>{props.item.task}</div>
     </div>
   )
