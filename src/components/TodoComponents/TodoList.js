@@ -13,7 +13,7 @@ class TodoList extends React.Component {
     </StyledButton></div> : null
   }
 
-  render(props) {
+  render() {
     return (
       <div className="todo-list">
         {this.props.todoList.map(item => (
