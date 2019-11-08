@@ -1,0 +1,9 @@
+.item.completed {
+  text-decoration: line-through!important;
+  background: yellow!important;
+  color: black!important;
+}
+
+.instructions {
+  font-size: 1.5rem!important;
+}
